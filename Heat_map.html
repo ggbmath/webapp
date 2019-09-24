@@ -1,0 +1,87 @@
+<html>
+
+<head>
+  <script type="text/javascript" charset="UTF-8"
+ src="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraphcore.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraph.css" />
+ <meta name="viewport" content="width=device-width, initial-scale=0.8">
+                    <meta charset="utf-8"> 
+  
+</head>
+<body>
+  <div align="center">
+    
+  
+<div id="box" style="width:400px; height:400px;" ></div>
+</div>
+<script type="text/javascript">
+// var board = JXG.JSXGraph.initBoard('box', {boundingbox: [-4, 4, 4, -4], axis:true, grid:true, showCopyright:false});
+
+// Given is a 2D data array of size (len x len) containing integer values
+// from 0 to (bins-1).
+var len = 20;
+var bins = 10;
+// Here, we just create random values.
+var xyArr = [];
+var i, j;
+for (i=0; i<len; i++) {
+	xyArr[i] = [];
+	for (j=0; j<len; j++) {
+		xyArr[i][j] = Math.round(Math.random()*(bins-1));
+	}
+}
+
+// Now, xyArr is a 2D array containing the random integer values and we can start
+// creating the heat map.
+var brd = JXG.JSXGraph.initBoard('box', {boundingbox:[-0.5,len+0.5+2, len+0.5, 0.5],
+	keepaspectratio:false, showNavigation:true, showCopyright:false});
+
+var slideMin = brd.create('slider', [[1,20], [10,20], [0,0,bins]], {name:'min'});
+var slideMax = brd.create('slider', [[1,21], [10,21], [0,bins,bins]], {name:'max'});
+
+// spot() creates a quadratic single filled curve centered around (x,y).
+var spot = function(board, y, x, v, maxVal) {
+	var colFunc = function() {
+            var c;
+            // Gray out small and large values.
+            if (v<slideMin.Value()) {
+                c = '#aaaaaa';
+            } else if (v>slideMax.Value()) {
+                c = '#cccccc';
+            } else {
+                //c = JXG.hsv2rgb(270.0-v*270.0/maxVal, 0.8, 1.0);
+                c = JXG.hsv2rgb(0.0, v/maxVal, 1.0);
+            }
+            return c;
+        };
+
+	var cu = board.create('curve',
+		[[x-0.5, x+0.5, x+0.5, x-0.5, x-0.5],
+		 [y-0.5, y-0.5, y+0.5, y+0.5, y-0.5]],
+		{strokeWidth:0, fillColor:colFunc, highlightFillColor:colFunc, highlightFillOpacity:0.8});
+
+        // Turn off highlighting to increase efficiency.
+        cu.hasPoint = function() { return false;};
+        return cu;
+	};
+
+var createHeatMap = function(board, arr2D, xlen, ylen, bins) {
+            var i, j, heat = [];
+
+            board.suspendUpdate();
+            for (i=0; i<ylen; i++) {
+	        heat[i] = [];
+	        for (j=0; j<xlen; j++) {
+		    heat[i][j] = spot(board, i, j, xyArr[i][j], bins-1);
+	        }
+            }
+            board.unsuspendUpdate();
+            return heat;
+        };
+
+createHeatMap(brd, xyArr, len, len, bins);
+
+</script>
+  
+</body>
+</html>

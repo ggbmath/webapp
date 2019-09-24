@@ -1,0 +1,39 @@
+<head>
+<script type="text/javascript" charset="UTF-8"
+ src="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraphcore.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraph.css" />
+ <meta name="viewport" content="width=device-width, initial-scale=0.8">
+                    <meta charset="utf-8"> 
+</head>
+<body>
+
+<div align="left">
+  
+  
+<div id="box" style="width:400px; height:400px;"></div>
+</div>
+<script type="text/javascript">
+// var board = JXG.JSXGraph.initBoard('box', {boundingbox: [-4, 4, 4, -4], axis:true, grid:true, showCopyright:false});
+
+    var dataArr = [30,16,14,10,10,8,6,6];
+    var board = JXG.JSXGraph.initBoard('box', {showNavigation:true, boundingbox: [-10, 10, 10, -10], grid:false, showCopyright:false});
+    board.containerObj.style.backgroundColor = 'white';
+    board.options.label.strokeColor = 'black';
+    board.suspendUpdate();
+
+    var a = board.createElement('chart', dataArr,
+        {chartStyle:'pie',
+         colors:['#0F408D','#6F1B75','#CA147A','#DA2228','#E8801B','#FCF302','#8DC922','#15993C','#87CCEE','#0092CE'],
+         fillOpacity:0.8, center:[5,2], strokeColor:'black', highlightStrokeColor:'black', strokeWidth:2,
+         labels:['a','b', 'c','d', '3D ', 'e','f', 'g'],
+         highlightColors:['#E46F6A','#F9DF82','#F7FA7B','#B0D990','#69BF8E','#BDDDE4','#92C2DF','#637CB0','#AB91BC','#EB8EBF'],
+         highlightOnSector:true,
+         highlightBySize:true,
+         gradient:'linear'
+        }
+    );
+    board.unsuspendUpdate();
+
+</script>
+
+</body>

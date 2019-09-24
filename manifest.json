@@ -1,0 +1,35 @@
+{
+ 
+  "name": "비주얼통계",
+  "short_name": "비주얼통계",
+  "icons": [{
+    "src": "https://cdn.glitch.com/dd3ef8eb-e95c-4178-b4c8-111a0e581d33%2Fimg029.jpg?v=1568787681908",
+      "sizes": "128x128",
+      "type": "image/png"
+    }, {
+      "src": "https://cdn.glitch.com/dd3ef8eb-e95c-4178-b4c8-111a0e581d33%2Fimg029.jpg?v=1568787681908",
+      "sizes": "144x144",
+      "type": "image/png"
+    }, {
+      "src": "https://cdn.glitch.com/dd3ef8eb-e95c-4178-b4c8-111a0e581d33%2Fimg029.jpg?v=1568787681908",
+      "sizes": "152x152",
+      "type": "image/png"
+    }, {
+      "src": "https://cdn.glitch.com/dd3ef8eb-e95c-4178-b4c8-111a0e581d33%2Fimg029.jpg?v=1568787681908",
+      "sizes": "192x192",
+      "type": "image/png"
+    }, {
+      "src": "https://cdn.glitch.com/dd3ef8eb-e95c-4178-b4c8-111a0e581d33%2Fimg029.jpg?v=1568787681908",
+      "sizes": "256x256",
+      "type": "image/png"
+    }, {
+      "src": "https://cdn.glitch.com/dd3ef8eb-e95c-4178-b4c8-111a0e581d33%2Fimg029.jpg?v=1568787681908",
+      "sizes": "512x512",
+      "type": "image/png"
+    }],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#3E4EB8",
+  "theme_color": "#2F3BA2"
+  
+}

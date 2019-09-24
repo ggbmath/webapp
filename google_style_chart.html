@@ -1,0 +1,60 @@
+<head>
+<script type="text/javascript" charset="UTF-8"
+ src="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraphcore.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraph.css" />
+ <meta name="viewport" content="width=device-width, initial-scale=0.5">
+                    <meta charset="utf-8"> 
+</head>
+<body>
+
+<div align="center">
+<div id="box" style="width:700px; height:400px;"></div>
+  </div>
+<script type="text/javascript">
+// var board = JXG.JSXGraph.initBoard('box', {boundingbox: [-4, 4, 4, -4], axis:true, grid:true, showCopyright:false});
+
+ var graph1;
+ var brd = JXG.JSXGraph.initBoard('box', {boundingbox:[-1,6,21,-1], axis: true, grid:true, showCopyright:false});
+
+function doIt() {
+   var i, x1, y1;
+   var p;
+   var points = [];
+   var x = [];
+   var y = [];
+   var start = 0;
+   var end = 20;
+   points.push(brd.createElement('point', [start,0], {visible:false, name:'', fixed:true}));
+   for (i=start;i<=end;i++) {
+
+     // Generate random coordinates
+     x1 = i;
+     y1 = Math.random()*4+1;
+
+     // Plot it
+     p = brd.createElement('point', [x1,y1],
+                   {strokeWidth:2, strokeColor:'#ffffff',
+                    highlightStrokeColor:'#0077cc', fillColor:'#0077cc',
+                    highlightFillColor:'#0077cc', style:6, name:'', fixed:true}
+                 );
+     points.push(p);
+     x.push(x1);
+     y.push(y1);
+   }
+   // Filled area. We need two additional points [start,0] and [end,0]
+   points.push(brd.createElement('point', [end,0], {visible:false, name:'', fixed:true}));
+   brd.createElement('polygon',points, {withLines:false,fillColor:'#e6f2fa'});
+
+   // Curve:
+   brd.createElement('curve', [x,y],
+                 {strokeWidth:3, strokeColor:'#0077cc',
+                  highlightStrokeColor:'#0077cc'}
+               );
+}
+brd.suspendUpdate();
+doIt();
+brd.unsuspendUpdate();
+
+</script>
+
+</body>

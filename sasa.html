@@ -1,0 +1,1426 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta content="text/html; charset=UTF-8;" http-equiv="Content-Type" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>달빛 학사 | </title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    <link rel="apple-touch-icon" href="/static/img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/img/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/img/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <script src="/vendor/components/jquery/jquery.min.js"></script>
+    <script src="/vendor/components/jqueryui/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="/vendor/components/jqueryui/themes/base/jquery-ui.min.css">
+
+    <link rel="stylesheet" href="/vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/vendor/twbs/bootstrap/dist/css/bootstrap-theme.css">
+    <script src="/vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- fontawesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/js/all.min.js" integrity="sha256-xzrHBImM2jn9oDLORlHS1/0ekn1VyypEkV1ALvUx8lU=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/v4-shims.min.css" integrity="sha256-DRxbpLKdtC2t9h+ecwQzH6g1/nMruwKCKtoXqaY8IV8=" crossorigin="anonymous" />
+
+    <!-- AdminLTE App -->
+    <link rel="stylesheet" href="/vendor/almasaeed2010/adminlte/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="/vendor/almasaeed2010/adminlte/dist/css/skins/_all-skins.min.css">
+    <script src="/vendor/almasaeed2010/adminlte/dist/js/app.min.js"></script>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/static/css/gomain.css">
+
+    <!-- bootstrap-daterangepicker -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/3.0.3/moment.min.js" integrity="sha256-L3S3EDEk31HcLA5C6T2ovHvOcD80+fgqaCDt2BAi92o=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/3.0.3/daterangepicker.min.js" integrity="sha256-cpdGuiwvKhwkQY18xx0CNJBb9AhGOYKsAz6ea7LaB30=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/3.0.3/daterangepicker.min.css" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="/vendor/afarkas/html5shiv/dist/html5shiv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- FastClick -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+
+    <script>
+        $.widget.bridge('uibutton', $.ui.button);
+    </script>
+
+    <style>
+        .sidebar-toggle:before {
+            content: ' '!important;
+        }
+    </style>
+</head>
+
+<body class="hold-transition skin-red-light sidebar-mini">
+    <div class="wrapper">
+        <header class="main-header">
+            <a href="/" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>
+                <i class="far fa-moon" aria-hidden="true"></i>
+                </b></span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg">
+                    <i class="far fa-moon"></i>
+                    <b>달빛</b>학사
+                </span>
+            </a>
+            <nav class="navbar navbar-static-top" role="navigation">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <i class="fas fa-align-justify"></i>
+                </a>
+
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                                                        <li class="dropdown messages-menu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                        <i class="far fa-envelope"></i>
+                                        <span class="label label-danger">0</span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li class="header">0개의 읽지 않은 메시지가 있습니다.</li>
+                                        <li class="footer"><a href="/sms/main">모든 메시지 보기</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown user user-menu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                                                <span> 임상연(...)</span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li class="user-footer">
+                                            <div class="pull-left col-md-6">
+                                                                                        </div>
+                                            <div class="pull-right col-md-6">
+                                                <a href="/auth/password" class="btn btn-warning btn-sm btn-flat"><i class="fas fa-sync"></i></a>
+                                                <a href="/auth/logout" class="btn btn-danger btn-sm btn-flat"><i class="fas fa-sign-out-alt"></i></a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                            </ul>
+                </div>
+            </nav>
+        </header>
+
+        <aside class="main-sidebar">
+            <section class="sidebar">
+                <ul class="sidebar-menu">
+                    <li class="header">BOARD</li>
+
+                    <li><a href="/board/boardScrap"><i class="fas fa-star" aria-hidden="true"></i><span> 스크랩 목록 보기</span></a></li>
+                    <li class="treeview ">
+                        <a href="#"><i class="fas fa-align-justify"></i> <span> 게시판</span>
+                            <span class='pull-right-container'>
+                                <span id='board_list_sum' class='label label-default pull-right'><span id='board_list_sum_cnt'>0</span></span>
+                            </span>
+                        </a>
+
+                        <ul class="treeview-menu">
+                            <li><a href="/board/lists/33/page/1"><i class="fas fa-bullhorn"></i> <span> 일반 공지</span><span class='pull-right-container'>
+    <span id='board_label_33' class='label label-default pull-right'>
+        <span id='board_cnt_33'>0</span>
+    </span>
+</span></a></li>
+                            <li><a href="/board/lists/34/page/1"><i class="far fa-envelope-open"></i> <span> 교과 공지</span><span class='pull-right-container'>
+    <span id='board_label_34' class='label label-default pull-right'>
+        <span id='board_cnt_34'>0</span>
+    </span>
+</span></a></li>
+                            <li><a href="/board/lists/16/page/1"><i class="fab fa-free-code-camp"></i> <span> 대회 및 캠프</span><span class='pull-right-container'>
+    <span id='board_label_16' class='label label-default pull-right'>
+        <span id='board_cnt_16'>0</span>
+    </span>
+</span></a></li>
+                                                        <li><a href="/board/lists/37/page/1"><i class="fab fa-gratipay"></i> <span> 학교 사용설명서</span><span class='pull-right-container'>
+    <span id='board_label_37' class='label label-default pull-right'>
+        <span id='board_cnt_37'>0</span>
+    </span>
+</span></a></li>
+                                                        <li><a href="/board/lists/35/page/1"><i class="fas fa-mask"></i> <span> 분실물</span><span class='pull-right-container'>
+    <span id='board_label_35' class='label label-default pull-right'>
+        <span id='board_cnt_35'>0</span>
+    </span>
+</span></a></li>
+                            <li><a href="/board/lists/7/page/1"><i class="far fa-paper-plane"></i> <span> SASA TIP</span><span class='pull-right-container'>
+    <span id='board_label_7' class='label label-default pull-right'>
+        <span id='board_cnt_7'>0</span>
+    </span>
+</span></a></li>
+                            <li><a href="/board/lists/19/page/1"><i class="fab fa-gratipay"></i><span> 달빛학사 설명서</span><span class='pull-right-container'>
+    <span id='board_label_19' class='label label-default pull-right'>
+        <span id='board_cnt_19'>0</span>
+    </span>
+</span></a></li>
+                            <li><a href="/board/lists/32/page/1"><i class="fas fa-bug"></i><span> 건의 및 버그</span><span class='pull-right-container'>
+    <span id='board_label_32' class='label label-default pull-right'>
+        <span id='board_cnt_32'>0</span>
+    </span>
+</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview ">
+                        <a href="#"><i class="fas fa-align-justify"></i> <span> 기타 게시판</span>
+                            <span class='pull-right-container'>
+                                <span id='board_auth_sum' class='label label-default pull-right'><span id='board_etc_sum_cnt'>0</span></span>
+                            </span>
+                        </a>
+                    <ul class="treeview-menu">
+                                                <li><a href="/board/lists/190217/page/1"><i class="fas fa-archive"></i><span> [19-2] 수학세미나 II</span><span class='pull-right-container'>
+    <span id='board_label_190217' class='label label-default pull-right'>
+        <span id='board_cnt_190217'>0</span>
+    </span>
+</span></a></li>
+                                                        <li><a href="/board/lists/1933/page/1"><i class="fab fa-affiliatetheme"></i><span> [19] 3-3 학급</span><span class='pull-right-container'>
+    <span id='board_label_1933' class='label label-default pull-right'>
+        <span id='board_cnt_1933'>0</span>
+    </span>
+</span></a></li>
+                                                    <li><a href="/board/lists/19101/page/1"><i class="fab fa-affiliatetheme"></i><span> [19] Share Your Math</span><span class='pull-right-container'>
+    <span id='board_label_19101' class='label label-default pull-right'>
+        <span id='board_cnt_19101'>0</span>
+    </span>
+</span></a></li>
+                                            </ul>
+                    </li>
+
+                    <li class="header">특별</li>
+<!--                    <li><a href="/assessment/" target="_self"><i class="fas fa-search"></i> <span> 2차 지필평가 정보</span></a></li>-->
+                    <li><a href="/board/lists/39/page/1"><i class="fab fa-weebly"></i><span> 인문자연탐사</span><span class='pull-right-container'>
+    <span id='board_label_39' class='label label-default pull-right'>
+        <span id='board_cnt_39'>0</span>
+    </span>
+</span></a></li>
+                    <li><a href="/collection"><i class="fab fa-artstation"></i><span> 자료 집계 시스템 [BETA]</span></a></li>
+
+
+                    <li class="header">부서별</li>
+                    <li class="treeview ">
+                        <a href="#"><i class="far fa-handshake"></i><span> 공통</span>
+                            <span class='pull-right-container'>
+                                                                <span class='label label-danger pull-right'><span>1</span></span>
+                                                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="/calendar/view" target="_self"><i class="far fa-calendar-alt"></i> 공용 강의실 사용 현황</a></li>
+
+                                                            <li><a href="/timetable/remain" target="_self"><i class="far fa-calendar-alt"></i> 공강 현황표</a></li>
+                                <li><a href="/outPlace/teaGetList" target="_self"><i class="far fa-calendar-alt"></i> 공강 관리</a></li>
+                                <li>
+                                    <a href="/night_Control/teacher" target="_self"><i class="fas fa-external-link-alt"></i> <span>기타 지도 승인</span>
+                                        <span class='label label-danger pull-right'><span>1</span></span>
+                                    </a>
+                                </li>
+                                                            <li><a href="/CopyKiller/main" target="_self"><i class="far fa-copyright"></i> 표절 검사[BETA]</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview ">
+                        <a href="#"><i class="far fa-snowflake" aria-hidden="true"></i><span> 교무기획부</span></a>
+                        <ul class="treeview-menu">
+                            <li><a href="/timetable/search_new"><i class="fas fa-battery-full"></i> <span>시간표 검색</span></a></li>
+                            <li><a href="/timetable/dup"><i class="far fa-clone"></i> <span>공강시간 검색</span></a></li>
+                                                        <li><a href="/timetable/attendance/"><i class="fas fa-map-signs"></i><span>출석부 출력</span></a></li>
+                            <li><a href="/board/lists/21/page/1"><i class="far fa-fw fa-paper-plane" aria-hidden="true"></i><span> 규정-양식</span><span class='pull-right-container'>
+    <span id='board_label_21' class='label label-default pull-right'>
+        <span id='board_cnt_21'>0</span>
+    </span>
+</span></a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="treeview ">
+                        <a href="#"><i class="fas fa-chart-pie" aria-hidden="true"></i><span> 교육과정연구부</span></a>
+                        <ul class="treeview-menu">
+                            <li><a href="/library/return_book" target="_self"><i class="fas fa-book"></i> 도서 대여 목록</a></li>
+                            <li><a href="/library" target="_self"><i class="fas fa-book-open"></i> 도서 신청</a></li>
+                            <!--                            <li><a href="/board/lists/13"><span><i class="far fa-hdd"></i> 프로젝트기반연구 제안</span></a></li>-->
+                            <!-- <li><a href="/board/lists/27"><span><i class="far fa-hdd"></i> 계절학기 신청</span></a></li> -->
+                                                        <li><a href="/sugang/teaList/1"><span><i class="fas fa-bath"></i> 강의정보 | 교사</span></a></li>
+                                                        
+                            
+                                                            <li><a href="/sugang/result" target="_self"><i class="far fa-comment-alt"></i> 수강이력 조회</a></li>
+                            
+                            
+                            
+                                                            <li><a href="/bookHistory/bookM_appList"><i class="fas fa-book"></i> <span>독서기록 검색하기</span></a></li>
+                                <li><a href="/teacher/train/"><i class="far fa-circle"></i><span>이전 연수번호 조회</span></a></li>
+                            
+                            
+                                                    </ul>
+                    </li>
+                    <li class="treeview ">
+                        <a href="#"><i class="fab fa-superpowers"></i><span> 진로방과후부</span></a>
+                        <ul class="treeview-menu">
+                            <li><a href="/board/lists/20/page/1"><i class="fas fa-bullhorn"></i> <span> 방과후학교 희망강좌 신청</span><span class='pull-right-container'>
+    <span id='board_label_20' class='label label-default pull-right'>
+        <span id='board_cnt_20'>0</span>
+    </span>
+</span></a></li>
+                            <li><a href="/afterschool"><i class="far fa-check-circle"></i> <span>방과후학교 신청</span></a></li>
+
+                                                        <li><a href="/afterschool/attendance"><i class="far fa-calendar-check"></i> <span>방과후학교 출석부</span></a></li>
+                            <li><a href="/afterschool/vote_admin"><i class="fas fa-cogs"></i> <span>설문조사 결과</span></a></li>
+                            
+                                                        <li><a href="/board/lists/36/page/1"><i class="fab fa-servicestack"></i> <span>학생 봉사활동</span><span class='pull-right-container'>
+    <span id='board_label_36' class='label label-default pull-right'>
+        <span id='board_cnt_36'>0</span>
+    </span>
+</span></a></li>
+                        </ul>
+                    </li>
+
+                    <li class="treeview ">
+                        <a href="#"><i class="fas fa-shower"></i> <span>기숙사운영부</span></a>
+                        <ul class="treeview-menu">
+                                                        <li><a href="/visit/outing"><i class="fas fa-user-secret"></i> <span> 외출/외박 등록</span></a></li>
+                            
+                            
+                            
+                                                        <li><a href="/rating/rating_admin/dormi/1"><i class="fas fa-user"></i> <span> 기숙사 상벌점 통계</span></a></li>
+                                                    </ul>
+                    </li>
+
+                    <li class="treeview ">
+                        <a href="#"><i class="fas fa-universal-access"></i><span> 학생안전부</span><span class='pull-right-container'>
+    <span id='board_label_24' class='label label-default pull-right'>
+        <span id='board_cnt_24'>0</span>
+    </span>
+</span></a>
+                        <ul class="treeview-menu">
+                            <li><a href="/board/lists/24/page/1"><i class="fas fa-piggy-bank"></i><span> 학생생활교육</span></a></li>
+
+                                                        <li><a href="/rating/rating_insert/Mb"><i class="fas fa-user-plus"></i> <span> 본관 상벌점 등록</span></a></li>
+                            <li><a href="/rating/rating_admin/Mb/1"><i class="fas fa-user"></i> <span> 본관 상벌점 통계</span></a></li>
+                                                    </ul>
+                    </li>
+
+                    <li class="treeview ">
+                        <a href="#">
+                            <i class="fas fa-balance-scale"></i> <span> 학생연구부</span>
+                            <span class='pull-right-container'>
+                                <span id='board_thesis_sum' class='label label-default pull-right'><span id='board_thesis_sum_cnt'>0</span></span>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="/thesis/"><i class="fas fa-balance-scale"></i> <span> 연구활동 기록</span></a></li>
+                            
+                            <li><a href="/board/lists/10/page/1"><i class="fab fa-ravelry"></i> <span> 인턴십 공지</span><span class='pull-right-container'>
+    <span id='board_label_10' class='label label-default pull-right'>
+        <span id='board_cnt_10'>0</span>
+    </span>
+</span></a></li>
+                            <li><a href="/board/lists/11/page/1"><i class="fab fa-ravelry"></i> <span> 인턴십 기관 정보</span><span class='pull-right-container'>
+    <span id='board_label_11' class='label label-default pull-right'>
+        <span id='board_cnt_11'>0</span>
+    </span>
+</span></a></li>
+
+                                                        <li><a href="/thesis/endThesisList"><i class="fab fa-themeisle"></i><span> 졸업논문 정보 관리</span></a></li>
+                            <li><a href="/thesis/endThesisEva"><i class="fab fa-themeisle"></i><span> 졸업논문 평가하기</span></a></li>
+                            
+                                                    </ul>
+                    </li>
+
+                    <li class="treeview ">
+                        <a href="#"><i class="fas fa-chart-line"></i><span> 창의융합부</span></a>
+                        <ul class="treeview-menu">
+                                                        <li><a href="/board/lists/29/page/1"><i class="fas fa-blender"></i> <span> 첨단기기 활용 영상</span><span class='pull-right-container'>
+    <span id='board_label_29' class='label label-default pull-right'>
+        <span id='board_cnt_29'>0</span>
+    </span>
+</span></a></li>
+                                                        <li><a href="/static/data/AEOP/SASA_AEOP_0.pdf" target="_blank"><i class="fas fa-map-signs"></i><span> 첨단기자재 운용 계획</span></a></li>
+                            <li style="margin-left: 10px !important;"><a href="/static/data/AEOP/SASA_AEOP_1.pdf" target="_blank"><i class="fab fa-angular"></i><span> 첨단기자재 [물리]</span></a></li>
+                            <li style="margin-left: 10px !important;"><a href="/static/data/AEOP/SASA_AEOP_2.pdf" target="_blank"><i class="fab fa-angular"></i><span> 첨단기자재 [화학]</span></a></li>
+                            <li style="margin-left: 10px !important;"><a href="/static/data/AEOP/SASA_AEOP_3.pdf" target="_blank"><i class="fab fa-angular"></i><span> 첨단기자재 [생명과학]</span></a></li>
+                            <li style="margin-left: 10px !important;"><a href="/static/data/AEOP/SASA_AEOP_4.pdf" target="_blank"><i class="fab fa-angular"></i><span> 첨단기자재 [지구과학]</span></a></li>
+                            <li style="margin-left: 10px !important;"><a href="/static/data/AEOP/SASA_AEOP_5.pdf" target="_blank"><i class="fab fa-angular"></i><span> 첨단기자재 [정보과학, 공학]</span></a></li>
+                        </ul>
+                    </li>
+                                                            <li class="header">기타 링크</li>
+
+<!--                    <li><a href="/RcmndMusic/musicView"><i class="fab fa-youtube text-danger"></i><span> 노래 추천</span></a></li>-->
+                    <li><a href="/board/lists/26/page/1"><i class="fas fa-bullhorn"></i><span> 점심방송 신청</span><span class='pull-right-container'>
+    <span id='board_label_26' class='label label-default pull-right'>
+        <span id='board_cnt_26'>0</span>
+    </span>
+</span></a></li>
+                    <li><a href="/main/delivery/"><i class="fas fa-car-side"></i><span> 택배조회 [Beta]</span></a></li>
+                    <li><a href="/board/boardListControl"><i class="far fa-keyboard"></i><span> 전체 게시판 목록</span></a></li>
+                                        <li><a href="https://nas.sasa.hs.kr/photo/#!Albums" target="_blank"><i class="far fa-fw fa-images"></i><span> SASA 사진관</span></a></li>
+                                        <li><a href="https://code.sasa.hs.kr" target="_blank"><i class="fas fa-fw fa-code"></i><span> CODE SASA</span></a></li>
+                    <li><a href="http://reading.sje.go.kr/r/reading/search/schoolCodeSetting.jsp?schoolCode=31035&returnUrl=" target="_blank"><i class="fas fa-fw  fa-book"></i><span> 소장도서검색</span></a></li>
+                    <li><a href="http://sasa.sjeduhs.kr/" target="_blank"><i class="fas fa-fw fa-tv"></i><span> 학교 홈페이지</span></a></li>
+
+                    
+                                    </ul>
+            </section>
+        </aside>
+        <script>
+                        
+                    $('#board_cnt_16').replaceWith('3');
+                    if (3 >= 7)
+                    {
+                        $('#board_label_16').removeClass('label-default').addClass('label-danger');
+                    }
+                    else
+                    if (3 >= 5)
+                    {
+                        $('#board_label_16').removeClass('label-default').addClass('label-warning');
+                    }
+                    else
+                    if (3 >= 3)
+                    {
+                        $('#board_label_16').removeClass('label-default').addClass('label-info');
+                    } else {
+                        $('#board_label_16').removeClass('label-default').addClass('label-primary');
+                    }
+                
+                        
+                    $('#board_cnt_33').replaceWith('4');
+                    if (4 >= 7)
+                    {
+                        $('#board_label_33').removeClass('label-default').addClass('label-danger');
+                    }
+                    else
+                    if (4 >= 5)
+                    {
+                        $('#board_label_33').removeClass('label-default').addClass('label-warning');
+                    }
+                    else
+                    if (4 >= 3)
+                    {
+                        $('#board_label_33').removeClass('label-default').addClass('label-info');
+                    } else {
+                        $('#board_label_33').removeClass('label-default').addClass('label-primary');
+                    }
+                
+                        
+                    $('#board_cnt_35').replaceWith('3');
+                    if (3 >= 7)
+                    {
+                        $('#board_label_35').removeClass('label-default').addClass('label-danger');
+                    }
+                    else
+                    if (3 >= 5)
+                    {
+                        $('#board_label_35').removeClass('label-default').addClass('label-warning');
+                    }
+                    else
+                    if (3 >= 3)
+                    {
+                        $('#board_label_35').removeClass('label-default').addClass('label-info');
+                    } else {
+                        $('#board_label_35').removeClass('label-default').addClass('label-primary');
+                    }
+                
+                        
+                    $('#board_cnt_1922').replaceWith('1');
+                    if (1 >= 7)
+                    {
+                        $('#board_label_1922').removeClass('label-default').addClass('label-danger');
+                    }
+                    else
+                    if (1 >= 5)
+                    {
+                        $('#board_label_1922').removeClass('label-default').addClass('label-warning');
+                    }
+                    else
+                    if (1 >= 3)
+                    {
+                        $('#board_label_1922').removeClass('label-default').addClass('label-info');
+                    } else {
+                        $('#board_label_1922').removeClass('label-default').addClass('label-primary');
+                    }
+                
+                        
+                    $('#board_cnt_190202').replaceWith('3');
+                    if (3 >= 7)
+                    {
+                        $('#board_label_190202').removeClass('label-default').addClass('label-danger');
+                    }
+                    else
+                    if (3 >= 5)
+                    {
+                        $('#board_label_190202').removeClass('label-default').addClass('label-warning');
+                    }
+                    else
+                    if (3 >= 3)
+                    {
+                        $('#board_label_190202').removeClass('label-default').addClass('label-info');
+                    } else {
+                        $('#board_label_190202').removeClass('label-default').addClass('label-primary');
+                    }
+                
+                        
+                    $('#board_cnt_190208').replaceWith('2');
+                    if (2 >= 7)
+                    {
+                        $('#board_label_190208').removeClass('label-default').addClass('label-danger');
+                    }
+                    else
+                    if (2 >= 5)
+                    {
+                        $('#board_label_190208').removeClass('label-default').addClass('label-warning');
+                    }
+                    else
+                    if (2 >= 3)
+                    {
+                        $('#board_label_190208').removeClass('label-default').addClass('label-info');
+                    } else {
+                        $('#board_label_190208').removeClass('label-default').addClass('label-primary');
+                    }
+                
+                        
+                    $('#board_cnt_190212').replaceWith('1');
+                    if (1 >= 7)
+                    {
+                        $('#board_label_190212').removeClass('label-default').addClass('label-danger');
+                    }
+                    else
+                    if (1 >= 5)
+                    {
+                        $('#board_label_190212').removeClass('label-default').addClass('label-warning');
+                    }
+                    else
+                    if (1 >= 3)
+                    {
+                        $('#board_label_190212').removeClass('label-default').addClass('label-info');
+                    } else {
+                        $('#board_label_190212').removeClass('label-default').addClass('label-primary');
+                    }
+                
+                        
+                    $('#board_cnt_190214').replaceWith('1');
+                    if (1 >= 7)
+                    {
+                        $('#board_label_190214').removeClass('label-default').addClass('label-danger');
+                    }
+                    else
+                    if (1 >= 5)
+                    {
+                        $('#board_label_190214').removeClass('label-default').addClass('label-warning');
+                    }
+                    else
+                    if (1 >= 3)
+                    {
+                        $('#board_label_190214').removeClass('label-default').addClass('label-info');
+                    } else {
+                        $('#board_label_190214').removeClass('label-default').addClass('label-primary');
+                    }
+                
+                        
+                    $('#board_cnt_190216').replaceWith('2');
+                    if (2 >= 7)
+                    {
+                        $('#board_label_190216').removeClass('label-default').addClass('label-danger');
+                    }
+                    else
+                    if (2 >= 5)
+                    {
+                        $('#board_label_190216').removeClass('label-default').addClass('label-warning');
+                    }
+                    else
+                    if (2 >= 3)
+                    {
+                        $('#board_label_190216').removeClass('label-default').addClass('label-info');
+                    } else {
+                        $('#board_label_190216').removeClass('label-default').addClass('label-primary');
+                    }
+                
+                        
+                    $('#board_cnt_190220').replaceWith('2');
+                    if (2 >= 7)
+                    {
+                        $('#board_label_190220').removeClass('label-default').addClass('label-danger');
+                    }
+                    else
+                    if (2 >= 5)
+                    {
+                        $('#board_label_190220').removeClass('label-default').addClass('label-warning');
+                    }
+                    else
+                    if (2 >= 3)
+                    {
+                        $('#board_label_190220').removeClass('label-default').addClass('label-info');
+                    } else {
+                        $('#board_label_190220').removeClass('label-default').addClass('label-primary');
+                    }
+                
+                        
+                    $('#board_cnt_190255').replaceWith('1');
+                    if (1 >= 7)
+                    {
+                        $('#board_label_190255').removeClass('label-default').addClass('label-danger');
+                    }
+                    else
+                    if (1 >= 5)
+                    {
+                        $('#board_label_190255').removeClass('label-default').addClass('label-warning');
+                    }
+                    else
+                    if (1 >= 3)
+                    {
+                        $('#board_label_190255').removeClass('label-default').addClass('label-info');
+                    } else {
+                        $('#board_label_190255').removeClass('label-default').addClass('label-primary');
+                    }
+                
+                        
+                    $('#board_cnt_190265').replaceWith('2');
+                    if (2 >= 7)
+                    {
+                        $('#board_label_190265').removeClass('label-default').addClass('label-danger');
+                    }
+                    else
+                    if (2 >= 5)
+                    {
+                        $('#board_label_190265').removeClass('label-default').addClass('label-warning');
+                    }
+                    else
+                    if (2 >= 3)
+                    {
+                        $('#board_label_190265').removeClass('label-default').addClass('label-info');
+                    } else {
+                        $('#board_label_190265').removeClass('label-default').addClass('label-primary');
+                    }
+                
+                        
+                    $('#board_cnt_190267').replaceWith('1');
+                    if (1 >= 7)
+                    {
+                        $('#board_label_190267').removeClass('label-default').addClass('label-danger');
+                    }
+                    else
+                    if (1 >= 5)
+                    {
+                        $('#board_label_190267').removeClass('label-default').addClass('label-warning');
+                    }
+                    else
+                    if (1 >= 3)
+                    {
+                        $('#board_label_190267').removeClass('label-default').addClass('label-info');
+                    } else {
+                        $('#board_label_190267').removeClass('label-default').addClass('label-primary');
+                    }
+                
+                
+            $('#board_list_sum_cnt').replaceWith('10');
+            if (10 >= 9)
+            {
+                $('#board_list_sum').removeClass('label-default').addClass('label-danger');
+            }
+            else
+            if (10 >=7)
+            {
+                $('#board_list_sum').removeClass('label-default').addClass('label-warning');
+            }
+            else
+            if (10 >=5)
+            {
+                $('#board_list_sum').removeClass('label-default').addClass('label-info');
+            } else {
+                $('#board_list_sum').removeClass('label-default').addClass('label-primary');
+            }
+
+            $('#board_etc_sum_cnt').replaceWith('0');
+            if (0 >=9)
+            {
+                $('#board_auth_sum').removeClass('label-default').addClass('label-danger');
+            }
+            else
+            if (0 >=7)
+            {
+                $('#board_auth_sum').removeClass('label-default').addClass('label-warning');
+            }
+            else
+            if (0 >=5)
+            {
+                $('#board_auth_sum').removeClass('label-default').addClass('label-info');
+            } else {
+                $('#board_auth_sum').removeClass('label-default').addClass('label-primary');
+            }
+
+            $('#board_thesis_sum_cnt').replaceWith('0');
+            if (0 >=9)
+            {
+                $('#board_thesis_sum').removeClass('label-default').addClass('label-danger');
+            }
+            else
+            if (0 >=7)
+            {
+                $('#board_thesis_sum').removeClass('label-default').addClass('label-warning');
+            }
+            else
+            if (0 >=5)
+            {
+                $('#board_thesis_sum').removeClass('label-default').addClass('label-info');
+            } else {
+                $('#board_thesis_sum').removeClass('label-default').addClass('label-primary');
+            }
+        </script>
+
+        
+        <div class="content-wrapper">
+
+
+    <link href="/static/lib/owi/css/open-weather-icons.css" rel="stylesheet" type="text/css">
+
+    <style>
+        .blackLink {
+            color: black !important;
+            padding: 3px !important;
+        }
+
+        #board_h td {
+            padding: 6px !important;
+        }
+
+        .menu {
+            line-height: 2em;
+        }
+
+    </style>
+
+    <section class="content">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="box" id='alerts'>
+                    <div class="box-header with-border">
+                        <h4 class="box-title"><i class="fas fa-bullhorn"></i> 공지사항</h4>
+                    </div>
+                    <div class="box-body">
+                        <table class="table table-bordered table-hover" style="font-size: 0.9em !important;">
+                            <thead>
+                            <tr class="info">
+                                <th scope="col" class="text-center">제목</th>
+                                <th scope="col" class="text-center" width="80px">작성자</th>
+                                <th scope="col" class="text-center" width="60px">조회수</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                                            <tr  id="board_h">
+                                    <td>
+                                        <a class='blackLink'
+                                           href="/board/view/16/uid/13274/page/"
+                                           target="_self">
+                                            [S][T]응급처치 경연대회 참가 안내합니다                                            <span id="rep_cnt_13274"></span>
+                                                                                    </a>
+                                    </td>
+                                    <td class="text-center">
+                                        박선연                                    </td>
+                                    <td class="text-center">
+                                        164                                    </td>
+                                </tr>
+                                                                <tr  id="board_h">
+                                    <td>
+                                        <a class='blackLink'
+                                           href="/board/view/33/uid/13269/page/"
+                                           target="_self">
+                                            [T][S] 2019학년도 2학기 1회고사 시험시간표(2번째) - 오류가 있는지                                             <span id="rep_cnt_13269"></span>
+                                             <i class="fa fa-file" aria-hidden="true"></i>                                        </a>
+                                    </td>
+                                    <td class="text-center">
+                                        김재숙                                    </td>
+                                    <td class="text-center">
+                                        260                                    </td>
+                                </tr>
+                                                                <tr  id="board_h">
+                                    <td>
+                                        <a class='blackLink'
+                                           href="/board/view/33/uid/13250/page/"
+                                           target="_self">
+                                            [S][T]창의적체험활동 안내(9.20.(금) 8교시)                                            <span id="rep_cnt_13250"></span>
+                                                                                    </a>
+                                    </td>
+                                    <td class="text-center">
+                                        김성휘                                    </td>
+                                    <td class="text-center">
+                                        178                                    </td>
+                                </tr>
+                                                                <tr  id="board_h">
+                                    <td>
+                                        <a class='blackLink'
+                                           href="/board/view/33/uid/13080/page/"
+                                           target="_self">
+                                            [S][T]9월 7일 체육관 사용 불가                                            <span id="rep_cnt_13080"></span>
+                                                                                    </a>
+                                    </td>
+                                    <td class="text-center">
+                                        김선주                                    </td>
+                                    <td class="text-center">
+                                        168                                    </td>
+                                </tr>
+                                                                <tr  id="board_h">
+                                    <td>
+                                        <a class='blackLink'
+                                           href="/board/view/33/uid/13070/page/"
+                                           target="_self">
+                                            [S][T]9월 보건소식지 상품 받아가세요~                                            <span id="rep_cnt_13070"></span>
+                                                                                    </a>
+                                    </td>
+                                    <td class="text-center">
+                                        박선연                                    </td>
+                                    <td class="text-center">
+                                        322                                    </td>
+                                </tr>
+                                                                <tr  id="board_h">
+                                    <td>
+                                        <a class='blackLink'
+                                           href="/board/view/33/uid/13022/page/"
+                                           target="_self">
+                                            [T][S] 9월 5-6일 체육관 이용 제한 안내                                            <span id="rep_cnt_13022"></span>
+                                                                                    </a>
+                                    </td>
+                                    <td class="text-center">
+                                        김선주                                    </td>
+                                    <td class="text-center">
+                                        193                                    </td>
+                                </tr>
+                                                                <tr  id="board_h">
+                                    <td>
+                                        <a class='blackLink'
+                                           href="/board/view/33/uid/12997/page/"
+                                           target="_self">
+                                            [T][3] 3학년 자기소개서 및 추천서 작성 유의사항 (재안내)                                            <span id="rep_cnt_12997"></span>
+                                                                                    </a>
+                                    </td>
+                                    <td class="text-center">
+                                        이재구                                    </td>
+                                    <td class="text-center">
+                                        396                                    </td>
+                                </tr>
+                                                                <tr  id="board_h">
+                                    <td>
+                                        <a class='blackLink'
+                                           href="/board/view/33/uid/12975/page/"
+                                           target="_self">
+                                            [S][T]2학기 학생동아리 출석부 서식 일부 변경 안내입니다.                                            <span id="rep_cnt_12975"></span>
+                                             <i class="fa fa-file" aria-hidden="true"></i>                                        </a>
+                                    </td>
+                                    <td class="text-center">
+                                        김선주                                    </td>
+                                    <td class="text-center">
+                                        139                                    </td>
+                                </tr>
+                                                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="box" id='menu'>
+                    <div class="box-header with-border">
+                        <h4 class="box-title"><i class="fas fa-shopping-basket"></i> 식단표
+                            <small>2019-09-18</small>
+                        </h4>
+                        <small><a href="/main/foodList" target="_self">more...</a></small>
+                    </div>
+                    <div class="box-body">
+                        <table class="table table-bordered table-hover" style="font-size: 0.95em !important;">
+                            <thead>
+                            <tr class="info">
+                                <th class="text-center" width="33%">아침</th>
+                                <th class="text-center" width="33%">점심</th>
+                                <th class="text-center" width="33%">저녁</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                                                    <td class="text-center menu">
+                                        찰현미밥<br/>사골곰탕<br/>콘치즈구이<br/>미트볼케첩조림<br/>석박지<br/>핑크보스톤<br/>아몬드브리즈<br/>쌀밥<br/>                                    </td>
+                                                                        <td class="text-center menu">
+                                        전복미역국<br/>잡채<br/>오리훈제샐러드<br/>구운단호박조청조림<br/>도라지부추무침<br/>배추겉절이<br/>생일축하케이크<br/>                                    </td>
+                                                                        <td class="text-center menu">
+                                        옥수수밥<br/>브로콜리스프<br/>수제일식돈까스와 양송이소스<br/>스파이시치즈카사바칩<br/>골뱅이실곤약무침<br/>깍두기<br/>비요트<br/>                                    </td>
+                                                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="text-center">
+                            <br/>
+                            <p class="text-danger"><i class="fab fa-themeisle"></i> 식단은 식품 수급상황에 따라
+                                변경될 수 있습니다</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-7">
+                <div class="box box-primary" id='calendar'>
+                    <div class="box-header with-border">
+                        <h4 class="box-title"><i class="far fa-check-square"></i> 학사일정</h4>
+                    </div>
+                    <div class="box-body text-center">
+                                                    <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=ko.south_korea%23holiday%40group.v.calendar.google.com&amp;color=%23711616&amp;src=sasa.hs.kr_8p0mjkdmcc1e0bp1siu9jdggmk%40group.calendar.google.com&amp;color=%23182C57&amp;src=sasa.hs.kr_36pcgitk8brhugqps9ga99ke2s%40group.calendar.google.com&amp;color=%236B3304&amp;src=sasa.hs.kr_sife2njfmfpia4c3gvs9cq8630%40group.calendar.google.com&amp;color=%232952A3&amp;ctz=Asia%2FSeoul"
+                                    style="border-width:0" width="95%" height="600" frameborder="0" id='in_cal'
+                                    scrolling="no"></iframe>
+                                                <!--                    <div id="calendar"></div>-->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="box box-primary" id='weather'>
+                    <div class="box-header with-border">
+                        <h4 class="box-title"><i class="far fa-sun"></i> 날씨 정보</h4>
+                        <small class="text-light-blue pull-right">미세먼지 정보 기준 시간: 2019-09-18 21:00</small>
+                    </div>
+                    <div class="box-body">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr class="info">
+                                    <td class="text-center"></td>
+                                    <th>CAI<br /><small class="text-info">대기환경</small></th>
+                                    <th>PM10<br /> <small class="text-info">미세먼지</small></th>
+                                    <th>PM2.5<br /> <small class="text-info">초미세먼지</small></th>
+                                    <th>O<sub>3</sub><br /><small class="text-info">오존</small></th>
+                                    <th>NO<sub>2</sub><br /><small class="text-info">이산화질소</small></th>
+                                    <th>CO<br /><small class="text-info">일산화탄소</small></th>
+                                    <th>SO<sub>2</sub><br /><small class="text-info">아황산가스</small></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">등급</td>
+                                    <th class="text-center"><i class="text-green far fa-smile fa-2x"></i></th>
+                                    <th class="text-center"><i class="text-green far fa-smile fa-2x"></i></th>
+                                    <th class="text-center"><i class="text-light-blue far fa-smile-beam fa-2x"></i></th>
+                                    <th class="text-center"><i class="text-light-blue far fa-smile-beam fa-2x"></i></th>
+                                    <th class="text-center"><i class="text-light-blue far fa-smile-beam fa-2x"></i></th>
+                                    <th class="text-center"><i class="text-light-blue far fa-smile-beam fa-2x"></i></th>
+                                    <th class="text-center"><i class="text-light-blue far fa-smile-beam fa-2x"></i></th>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">현재</td>
+                                    <td class="text-center">62</td>
+                                    <td class="text-center">46</td>
+                                    <td class="text-center">10</td>
+                                    <td class="text-center">0.029</td>
+                                    <td class="text-center">0.02</td>
+                                    <td class="text-center">0.5</td>
+                                    <td class="text-center">0.005</td>
+                                </tr>
+                                <tr class="warning">
+                                    <td class="text-center">평균</td>
+                                    <td class="text-center">51<br /></td>
+                                    <td class="text-center">26<br /></td>
+                                    <td class="text-center">10<br /></td>
+                                    <td class="text-center">0.027<br /></td>
+                                    <td class="text-center">0.013<br /></td>
+                                    <td class="text-center">0.42<br /></td>
+                                    <td class="text-center">0.003<br /></td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="8">
+                                        <a class='btn btn-flat btn-xs btn-adn' href="https://earth.nullschool.net/ko/#current/particulates/surface/level/overlay=pm2.5/orthographic=127.25,36.52,1304" target="_blank">Data visualization</a>
+                                        <small class="text-muted pull-right">단위: O<sub>3</sub>, NO<sub>2</sub>, CO, SO<sub>2</sub>(ppm) | PM10, PM25(㎍/㎥) | 평균: 최근 2주</small>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        <canvas id="myChart1" height="100"></canvas>
+                        <canvas id="myChart2" height="80"></canvas>
+<!--                        <canvas id="myChart3" height="70"></canvas>-->
+                        <canvas id="myChart4" height="80"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box">
+                    <table class="table table-hover table-bordered" style="margin: 1px !important;">
+                        <thead>
+                        <tr class="info">
+                            <th>일</th>
+                                                            <td class="text-center" width="3.75%">목</td>
+                                                            <td class="text-center" width="3.75%">목</td>
+                                                            <td class="text-center" width="3.75%">목</td>
+                                                            <td class="text-center" width="3.75%">목</td>
+                                                            <td class="text-center" width="3.75%">목</td>
+                                                            <td class="text-center" width="3.75%">목</td>
+                                                            <td class="text-center" width="3.75%">목</td>
+                                                            <td class="text-center" width="3.75%">목</td>
+                                                            <td class="text-center" width="3.75%">금</td>
+                                                            <td class="text-center" width="3.75%">금</td>
+                                                            <td class="text-center" width="3.75%">금</td>
+                                                            <td class="text-center" width="3.75%">금</td>
+                                                            <td class="text-center" width="3.75%">금</td>
+                                                            <td class="text-center" width="3.75%">금</td>
+                                                            <td class="text-center" width="3.75%">금</td>
+                                                            <td class="text-center" width="3.75%">금</td>
+                                                            <td class="text-center" width="3.75%">토</td>
+                                                            <td class="text-center" width="3.75%">토</td>
+                                                            <td class="text-center" width="3.75%">토</td>
+                                                            <td class="text-center" width="3.75%">토</td>
+                                                            <td class="text-center" width="3.75%">토</td>
+                                                            <td class="text-center" width="3.75%">토</td>
+                                                            <td class="text-center" width="3.75%">토</td>
+                                                            <td class="text-center" width="3.75%">토</td>
+                                                    </tr>
+                        <tr class="warning">
+                            <th>시</th>
+                                                            <td class="text-center">00</td>
+                                                                <td class="text-center">03</td>
+                                                                <td class="text-center">06</td>
+                                                                <td class="text-center">09</td>
+                                                                <td class="text-center">12</td>
+                                                                <td class="text-center">15</td>
+                                                                <td class="text-center">18</td>
+                                                                <td class="text-center">21</td>
+                                                                <td class="text-center">00</td>
+                                                                <td class="text-center">03</td>
+                                                                <td class="text-center">06</td>
+                                                                <td class="text-center">09</td>
+                                                                <td class="text-center">12</td>
+                                                                <td class="text-center">15</td>
+                                                                <td class="text-center">18</td>
+                                                                <td class="text-center">21</td>
+                                                                <td class="text-center">00</td>
+                                                                <td class="text-center">03</td>
+                                                                <td class="text-center">06</td>
+                                                                <td class="text-center">09</td>
+                                                                <td class="text-center">12</td>
+                                                                <td class="text-center">15</td>
+                                                                <td class="text-center">18</td>
+                                                                <td class="text-center">21</td>
+                                                        </tr>
+                        </thead>
+                        <tr>
+                            <th class="text-center">날씨</th>
+                                                            <td class="text-center" style="font-size: 1.2em !important;">
+                                    <i class="owi owi-01n" ></i>
+                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    <i class="owi owi-01n" ></i>
+                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    <i class="owi owi-01n" ></i>
+                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    <i class="owi owi-01d" ></i>
+                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    <i class="owi owi-03d" ></i>
+                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    <i class="owi owi-03d" ></i>
+                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    <i class="owi owi-03d" ></i>
+                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    <i class="owi owi-03n" ></i>
+                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    <i class="owi owi-02n" ></i>
+                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    <i class="owi owi-03n" ></i>
+                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    <i class="owi owi-04n" ></i>
+                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    <i class="owi owi-04d" ></i>
+                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    <i class="owi owi-04d" ></i>
+                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    <i class="owi owi-04d" ></i>
+                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    <i class="owi owi-04d" ></i>
+                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    <i class="owi owi-04n" ></i>
+                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    <i class="owi owi-04n" ></i>
+                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    <i class="owi owi-04n" ></i>
+                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    <i class="owi owi-04n" ></i>
+                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    <i class="owi owi-04d" ></i>
+                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    <i class="owi owi-03d" ></i>
+                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    <i class="owi owi-04d" ></i>
+                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    <i class="owi owi-04d" ></i>
+                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    <i class="owi owi-04n" ></i>
+                                </td>
+                                                        </tr>
+                        <tr style="font-size: 0.9em !important;">
+                            <th class="text-center">온도</th>
+                                                            <td class="text-center" style="font-size: 1.2em !important;">
+                                    14.1                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    13.8                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    13.4                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    19.1                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    22.6                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    24.2                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    18.7                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    14                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    13.5                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    12.5                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    13.1                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    17.7                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    20.7                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    22.8                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    19.4                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    16.5                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    16.1                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    14.8                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    14.4                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    18.8                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    23                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    19.2                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    17                                </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                    15.2                                </td>
+                                                        </tr>
+                        <tr style="font-size: 0.9em !important;">
+                            <th class="text-center">mm/h</th>
+                                                            <td class="text-center" style="font-size: 1.2em !important;">
+                                                                    </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                                                    </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                                                    </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                                                    </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                                                    </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                                                    </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                                                    </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                                                    </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                                                    </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                                                    </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                                                    </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                                                    </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                                                    </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                                                    </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                                                    </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                                                    </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                                                    </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                                                    </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                                                    </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                                                    </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                                                    </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                                                    </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                                                    </td>
+                                                                <td class="text-center" style="font-size: 1.2em !important;">
+                                                                    </td>
+                                                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        $('#rep_cnt_13022').replaceWith('[1]');
+    </script>
+        <script>
+        $('#rep_cnt_13070').replaceWith('[4]');
+    </script>
+        <script>
+        $('#rep_cnt_13274').replaceWith('[1]');
+    </script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+<script>
+    var ctx = document.getElementById('myChart1').getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'line',
+
+        // The data for our dataset
+        data: {
+            labels: [
+                '09-18','09-19','09-20','09-21','09-22','09-23'            ],
+            datasets: [
+            {
+                label: "최고온도",
+                borderColor: 'rgba(255,99,132,1)',
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                data: [27.8,24.2,22.8,23.0,21.2,22.4],
+                fill: false
+            },{
+                label: "최저온도",
+                borderColor: 'rgba(54, 162, 235, 1)',
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                data: [13.5,13.4,12.5,14.4,12.0,10.2],
+                fill: false
+            }
+            ]
+        }
+    });
+
+    var ctx2 = document.getElementById('myChart2').getContext('2d');
+    var chart2 = new Chart(ctx2, {
+        // The type of chart we want to create
+        type: 'line',
+
+        // The data for our dataset
+        data: {
+            labels: [
+                '09-18','09-19','09-20','09-21','09-22','09-23'            ],
+            datasets: [
+                {
+                    label: "습도 | %",
+                    borderColor: 'rgba(255, 206, 86, 1)',
+                    backgroundColor: 'rgba(255, 206, 86, 0.2)',
+                    data: [62,73,67,72,68,65]
+                },{
+                    label: "구름 | %",
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    data: [35,19,79,82,71,0]
+                }
+            ]
+        }
+    });
+
+    var ctx4 = document.getElementById('myChart4').getContext('2d');
+    var chart4 = new Chart(ctx4, {
+        // The type of chart we want to create
+        type: 'line',
+
+        // The data for our dataset
+        data: {
+            labels: [
+                '09-18','09-19','09-20','09-21','09-22','09-23'            ],
+            datasets: [
+                {
+                    label: "강우량 | mm/h",
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+
+                    data: [0.00,0.00,0.00,0.00,0.14,0.00]
+                },{
+                    label: "바람세기 | m/s",
+                    borderColor: 'rgba(255,99,132,1)',
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    data: [2.16,2.09,3.15,4.37,5.44,1.94]
+                }
+            ]
+        }
+    });
+</script>
+
+<script>
+    var getH = $('#weather').height();
+    var calH = $('#calendar').height();
+
+    var cal_diff = getH-calH;
+
+    $('#calendar').height(calH+cal_diff);
+    $('#in_cal').height($('#in_cal').height()+cal_diff);
+
+    var getAlertH = $('#alerts').height();
+    var getmenuH = $('#menu').height();
+
+    var max = 0;
+    if (getAlertH > getmenuH)
+        max = getAlertH;
+    else
+        max = getmenuH;
+    
+    $('#alerts').height(max);
+    $('#menu').height(max);
+</script>
+        </div>
+        <footer class="main-footer text-right" style="height: 65px !important;">
+            <small class='text-primary'>Copyright <i class="far fa-copyright"></i> 2019 BY 세종과학예술영재학교 All rights reserved.</small>
+            <small class='text-danger no_print'>담당자 E-mail(<a href='mailto:kadragon@sasa.hs.kr'>kadragon@sasa.hs.kr</a>)</small>
+            <small class="text-warning no_print"><a href="https://gist.github.com/kadragon/9ed597dae6ca23896678bc6829cec615" target="_blank"> | 개인정보처리방침</a></small>
+                    </footer>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-63026854-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-63026854-1');
+</script>
+<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyB7AKa6X0xE7VT1eVnNWQ66BGCEVb8KWok",
+            authDomain: "go-sasa.firebaseapp.com",
+            databaseURL: "https://go-sasa.firebaseio.com",
+            projectId: "go-sasa",
+            storageBucket: "",
+            messagingSenderId: "969996001580"
+        };
+
+        firebase.initializeApp(config);
+
+        // Retrieve Firebase Messaging object.
+        const messaging = firebase.messaging();
+
+        messaging.requestPermission().then(function() {
+            // console.log('Notification permission granted.');
+            if (isTokenSentToServer()) {
+                // console.log('Token already saved.');
+            } else {
+                getRegToken();
+            }
+        }).catch(function(err) {
+            console.log('Unable to get permission to notify.', err);
+        });
+
+        function getRegToken() {
+            messaging.getToken().then(function(currentToken) {
+                if (currentToken) {
+                    sendTokenToServer(currentToken);
+                    //console.log(currentToken);
+                    //setTokenSentToServer(true);
+                } else {
+                    // Show permission request.
+                    console.log('No Instance ID token available. Request permission to generate one.');
+                    setTokenSentToServer(false);
+                }
+            }).catch(function(err) {
+                console.log('An error occurred while retrieving token. ', err);
+                showToken('Error retrieving Instance ID token. ', err);
+                setTokenSentToServer(false);
+            });
+        }
+
+        function isTokenSentToServer() {
+            return window.localStorage.getItem('sentToServer') == 1;
+        }
+        function setTokenSentToServer(sent) {
+            window.localStorage.setItem('sentToServer', sent ? 1 : 0);
+        }
+
+        function sendTokenToServer(currentToken) {
+            if (!isTokenSentToServer()) {
+                console.log('Sending token to server...');
+                // TODO(developer): Send the current token to your server.
+
+                $.ajax({
+                    url: '/fcm/sendTokenToServer/',
+                    method: 'post',
+                    data: {
+                        'token': currentToken
+                    }
+                }).done(function (result) {
+                    // console.log(result);
+                });
+
+                setTokenSentToServer(true);
+            } else {
+                console.log('Token already sent to server so won\'t send it again ' + 'unless it changes');
+            }
+        }
+
+        messaging.onMessage(function (payload) {
+            console.log('Message Received' + payload);
+
+            notificationTitle = payload.data.title;
+            notificationOptions = {
+                body: payload.data.body
+                // body: payload.data.click_action
+            };
+
+            console.log(payload.data.click_action);
+
+            var notification = new Notification(notificationTitle, notificationOptions);
+
+            notification.onclick = function(event) {
+                event.preventDefault(); // prevent the browser from focusing the Notification's tab
+                window.open(payload.data.click_action, '_blank');
+            }
+        });
+
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/firebase-messaging-sw.js').then(registration => {
+                messaging.useServiceWorker(registration)
+            }).catch(err => console.log('Service Worker Error', err));
+        } else {
+            alert('Push not supported.');
+        }
+    </script>
+
+    <!-- <script src="/static/js/snowfall.jquery.js"></script>
+
+    <script type='text/javascript'> 
+        $(document).ready(function(){
+            $(document).snowfall({deviceorientation : true, round : true, minSize: 1, maxSize:8,  flakeCount : 200});
+        });
+    </script> -->
+</body>
+
+</html>

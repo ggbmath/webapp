@@ -1,0 +1,35 @@
+<head>
+  <script type="text/javascript" charset="UTF-8"
+ src="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraphcore.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraph.css" />
+ <meta name="viewport" content="width=device-width, initial-scale=0.7">
+                    <meta charset="utf-8"> 
+</head>
+<body>
+  <div align="left">
+    
+  
+<div id="box" style="width:600px; height:200px;"></div>
+</div>
+<script type="text/javascript">
+// var board = JXG.JSXGraph.initBoard('box', {boundingbox: [-4, 4, 4, -4], axis:true, grid:true, showCopyright:false});
+
+brd = JXG.JSXGraph.initBoard('box', {boundingbox:[-2, 100, 220, -70], grid: false, axis:true, showCopyright:false});
+brd.suspendUpdate();
+deg = brd.create('slider',[[10,90],[100,90],[1,1,10]],{name:'degree',snapWidth:1});
+s = brd.create('slider',[[10,70],[100,70],[0,1,3]],{name:'scale'});
+pointlist = [];
+for (i=0; i<30;i++) {
+    pointlist.push(brd.create('point', [function() { return 200*Math.random(); }, function() { return s.Value()*30*Math.random()+20;}], { style:4, strokecolor:"#0000a0", name:" "}));
+}
+brd.unsuspendUpdate();
+
+regression = JXG.Math.Numerics.regressionPolynomial(deg,pointlist);
+reg = brd.create('functiongraph',[regression],{strokeColor:'green'});
+t = brd.create('text',[20,-40,
+            function(){ return "r(x) = " + regression.getTerm();}
+            ],
+            {strokeColor:'black',fontSize:'14px'});
+
+</script>
+</body>

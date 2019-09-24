@@ -1,0 +1,48 @@
+<head>
+<script type="text/javascript" charset="UTF-8"
+ src="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraphcore.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraph.css" />
+ <meta name="viewport" content="width=device-width, initial-scale=0.8">
+                    <meta charset="utf-8"> 
+</head>
+<body>
+
+
+<div id="box" style="width:400px; height:400px;"></div>
+
+<form>
+<input type="button" value="refresh" onclick="reload();">
+</form>
+
+<div id="box2" style="width:400px; height:400px;"></div>
+
+<script type="text/javascript">
+// var board = JXG.JSXGraph.initBoard('box', {boundingbox: [-4, 4, 4, -4], axis:true, grid:true, showCopyright:false});
+
+board = JXG.JSXGraph.initBoard('box', {boundingbox: [-0.02, 1.02, 1.02, -0.02], grid:true, showCopyright:false});
+
+function reload() {
+    JXG.JSXGraph.freeBoard(board);
+    board = JXG.JSXGraph.initBoard('box', {boundingbox: [-0.02, 1.02, 1.02, -0.02], grid:true, showCopyright:false});
+
+    board.suspendUpdate();
+    for (var i=0;i<50;i++) {
+        var p = board.createElement('point',
+            [Math.random(),Math.random()],{size:3,withLabel:false});
+    }
+    board.unsuspendUpdate();
+}
+reload();
+
+</script>
+
+<script>
+board2 = JXG.JSXGraph.initBoard('box2', {boundingbox: [-0.02, 1.02, 1.02, -0.02], grid:true, showCopyright:false});
+board2.suspendUpdate();
+for (var i=0;i<50;i++) {
+    var p2 = board2.createElement('point', [function(){return Math.random();},function(){ return Math.random()}], {size:3, withLabel: false});
+}
+board2.unsuspendUpdate();
+JXG.addEvent(document.getElementById('box2'), 'mousemove', function () { this.update(); }, board2);
+</script>
+</body>

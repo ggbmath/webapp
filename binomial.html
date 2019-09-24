@@ -1,0 +1,100 @@
+<html>
+ <head>
+   <script type="text/javascript" charset="UTF-8"
+ src="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraphcore.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraph.css" />
+ <meta name="viewport" content="width=device-width, initial-scale=0.5">
+                    <meta charset="utf-8"> 
+   
+</head>
+  
+  <body>
+   <div align="center">
+     
+    
+ <div id="box1" class="jxgbox" style="width:400px; height:100px">
+</div>
+<br>
+<div id="box" class="jxgbox" style="width:500px; height:500px"></div>
+  </div>
+ 
+  
+  
+<script>       
+ 
+       var brd1 = JXG.JSXGraph.initBoard('box1', {boundingbox: [-0.3, 0, 1.3, -4], showNavigation:false, showCopyright: false, axis:false});
+       var prob = brd1.create('slider',[[0,-2],[1,-2],[0,0.5,1]], {name:'p'});
+   
+ 
+var brd = JXG.JSXGraph.initBoard('box', {boundingbox: [-1, 1.1, 21, -0.1], axis:true, showCopyright:false});
+
+brd1.addChild(brd);
+
+var p0 = brd.create('point', [0, function() {return binomial(20, 0, prob.Value());}], {name:''});
+var p1 = brd.create('point', [1, function() {return binomial(20, 1, prob.Value());}], {name:''});
+var p2 = brd.create('point', [2, function() {return binomial(20, 2, prob.Value());}], {name:''});
+var p3 = brd.create('point', [3, function() {return binomial(20, 3, prob.Value());}], {name:''});
+var p4 = brd.create('point', [4, function() {return binomial(20, 4, prob.Value());}], {name:''});
+var p5 = brd.create('point', [5, function() {return binomial(20, 5, prob.Value());}], {name:''});
+var p6 = brd.create('point', [6, function() {return binomial(20, 6, prob.Value());}], {name:''});
+var p7 = brd.create('point', [7, function() {return binomial(20, 7, prob.Value());}], {name:''});
+var p8 = brd.create('point', [8, function() {return binomial(20, 8, prob.Value());}], {name:''});
+var p9 = brd.create('point', [9, function() {return binomial(20, 9, prob.Value());}], {name:''});
+var p10 = brd.create('point', [10, function() {return binomial(20, 10, prob.Value());}], {name:''});
+var p11 = brd.create('point', [11, function() {return binomial(20, 11, prob.Value());}], {name:''});
+var p12 = brd.create('point', [12, function() {return binomial(20, 12, prob.Value());}], {name:''});
+var p13 = brd.create('point', [13, function() {return binomial(20, 13, prob.Value());}], {name:''});
+var p14 = brd.create('point', [14, function() {return binomial(20, 14, prob.Value());}], {name:''});
+var p15 = brd.create('point', [15, function() {return binomial(20, 15, prob.Value());}], {name:''});
+var p16 = brd.create('point', [16, function() {return binomial(20, 16, prob.Value());}], {name:''});
+var p17 = brd.create('point', [17, function() {return binomial(20, 17, prob.Value());}], {name:''});
+var p18 = brd.create('point', [18, function() {return binomial(20, 18, prob.Value());}], {name:''});
+var p19 = brd.create('point', [19, function() {return binomial(20, 19, prob.Value());}], {name:''});
+var p20 = brd.create('point', [20, function() {return binomial(20, 20, prob.Value());}], {name:''});
+
+
+var f = brd.create('functiongraph',[function(x){ 
+  var dist=0;
+  
+  for (n=0; n < 20 + 1; n++) {
+    if (x < n) {
+      return dist;
+    } 
+    dist=dist+binomial(20, n, prob.Value());
+  }
+  return dist; 
+}]);
+
+
+function binomial(n, k, p) {
+
+    var coeff = 1;
+
+
+    for (var x = n - k + 1; x < n+1; x++) {
+      coeff *= x;
+    }
+    for (x = 1; x < k+1; x++) {
+      coeff /= x;
+    }
+
+    var p1=1;
+    var p2=1;
+
+
+    for (x=0; x < k; x++) {
+       p1=p1*p;
+    }
+
+    for (x=0; x < n-k; x++) {
+       p2=p2*(1-p);
+    }
+
+
+    return coeff*p1*p2;
+}
+
+
+</script>
+     </body>
+</html>
